@@ -4,94 +4,96 @@
     box-sizing: border-box;
 }
 
-/* body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    padding: 20px;
-    background-color: #f4f4f4;
-} */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
     line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-    background-image: url('foto3.jpg');
-    background-size: cover; /* Untuk memastikan gambar menutupi seluruh background */
-    background-position: center; /* Agar gambar terpusat */
-    background-repeat: no-repeat; /* Menghindari pengulangan gambar */
 }
 
-
-header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.profile img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.profile h1 {
-    margin-top: 10px;
-    font-size: 24px;
-    color: whitesmoke;
-}
-
-.profile p {
+.sidebar {
+    width: 30%;
+    background-color: #333;
     color: white;
-}
-
-/* section {
-    margin-bottom: 20px;
-    background: white;
     padding: 20px;
     border-radius: 10px;
-} */
-
-section {
-    background-color: rgba(255, 255, 255, 0.6);; /* Warna putih dengan transparansi 80% */
-    padding: 20px;
-    border-radius: 10px; /* Supaya ada sudut yang melengkung */
     margin-bottom: 20px;
 }
 
-
-section h2 {
-    margin-bottom: 10px;
-    font-size: 20px;
-    border-bottom: 2px solid #333;
-    padding-bottom: 5px;
-}
-
-ul {
-    list-style-type: none;
-}
-
-footer {
+.profile {
     text-align: center;
-    padding: 10px;
-    margin-top: 20px;
-    color: white;
 }
 
-@media (min-width: 768px) {
-    body {
-        padding: 40px;
-    }
+.square-image {
+    width: 100%; /* Mengatur lebar gambar menjadi 100% dari elemen induknya */
+    height: auto; /* Tinggi otomatis agar proporsi gambar tetap terjaga */
+    max-height: 350px; /* Membatasi tinggi maksimum gambar */
+    object-fit: cover; /* Memastikan gambar menutupi area tanpa distorsi */
+    border-radius: 10px; /* Sudut melengkung jika diinginkan */
+    margin-bottom: 20px; /* Jarak di bawah gambar */
+}
 
-    section {
-        margin-bottom: 40px;
-    }
 
-    .profile h1 {
-        font-size: 32px;
-    }
+.contact-info {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
 
-    section h2 {
-        font-size: 24px;
-    }
+.contact-info li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: white; /* Warna teks awal */
+}
+
+.contact-info li a {
+    color: white; /* Warna teks awal untuk tautan */
+    text-decoration: none; /* Menghilangkan garis bawah */
+}
+
+.contact-info li a:hover {
+    color: blue; /* Warna saat kursor di atas tautan */
+    text-decoration: none; /* Menghilangkan garis bawah saat hover */
+}
+
+.contact-icon {
+    width: 24px; /* Ukuran ikon */
+    height: 24px;
+    margin-right: 10px; /* Jarak antara ikon dan teks */
+}
+
+.content {
+    width: 70%;
+    padding-left: 30px; /* Padding untuk konten */
+}
+
+.content h2 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 26px; /* Ukuran font yang lebih besar untuk judul */
+}
+
+.about-item, .job-item, .education-item, .certificate-item {
+    background-color: #dfdddd7e; /* Latar belakang yang lembut */
+    padding: 15px;
+    border-radius: 8px; /* Sudut melengkung */
+    margin-bottom: 15px; /* Jarak bawah */
+    text-align: justify; /* Membuat teks sejajar di kedua sisi */
+    line-height: 1.5; /* Jarak antar baris untuk kenyamanan membaca */
+    
+}
+
+.job-item h3, .education-item h3, .certificate-item h3 {
+    color: #007BFF; /* Warna judul yang mencolok */
 }
 
 .custom-link {
@@ -102,4 +104,47 @@ footer {
 .custom-link:hover {
     color: blue; /* Warna saat kursor di atas link */
     text-decoration: none; /* Garis bawah saat hover */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 20px;
+}
+
+/* Responsivitas untuk layar kecil */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%; /* Sidebar menjadi 100% di layar kecil */
+        padding: 15px; /* Padding yang lebih kecil untuk sidebar */
+    }
+
+    .content {
+        width: 100%; /* Konten menjadi 100% di layar kecil */
+        padding-left: 0; /* Menghilangkan padding di sisi kiri */
+    }
+
+    .square-image {
+        max-width: 150px; /* Membatasi ukuran maksimum foto untuk tampilan mobile */
+        margin: 0 auto; /* Centering gambar */
+        display: block; /* Mengatur gambar agar tampil sebagai block */
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column; /* Mengubah menjadi kolom di mobile */
+        align-items: flex-start; /* Mengatur item kontak ke kiri */
+    }
+
+    .contact-info li {
+        width: 100%; /* Mengatur lebar item kontak */
+        margin-bottom: 10px; /* Jarak antara item kontak */
+    }
+
+    .contact-icon {
+        width: 20px; /* Ukuran ikon yang lebih kecil */
+        height: 20px; /* Ukuran ikon yang lebih kecil */
+   }
 }
